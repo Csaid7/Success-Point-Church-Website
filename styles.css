@@ -1,0 +1,196 @@
+/* Global Reset and Base Styles */
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in total width/height */
+    margin: 0;              /* Removes default margin */
+    padding: 0;             /* Removes default padding */
+    font-family: 'Kumbh Sans', sans-serif; /* Sets base font */
+    scroll-behavior: smooth; /* Enables smooth scrolling on anchor links */
+}
+
+/* Navigation Bar Container */
+.navbar {   
+    background: #130c03;     /* Dark background color */
+    height: 80px;            /* Fixed navbar height */
+    display: flex;           /* Flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    font-size: 1.2rem;       /* Sets font size for nav content */
+    position: sticky;        /* Makes navbar stick to the top on scroll */
+    top: 0;                  /* Aligns sticky navbar to top */
+    z-index: 999;            /* Ensures navbar stays on top of other content */
+}
+
+/* Container for navbar content (logo + menu) */
+.navbar_container {
+    display: flex;                 /* Horizontal layout */
+    justify-content: space-between; /* Space between logo and menu items */
+    height: 80px;                 /* Match navbar height */
+    width: 100%;                  
+    z-index: 1;                   /* Layer position */
+    max-width: 1300px;            /* Max width to keep layout centered */
+    margin: 0 auto;               /* Center container */
+    padding: 0 50px;              /* Left and right padding */
+}
+
+/* Logo styling */
+#navbar__logo {
+    background-color: #ff8177;   /* Fallback background color */
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); /* Gradient text effect */
+    background-size: 100%;
+    -webkit-background-clip: text;  /* Chrome/Safari: clip background to text */
+    background-clip: text;          /* Standard: clip background to text */
+    -webkit-text-fill-color: transparent; /* Makes text see-through to show gradient */
+    -moz-text-fill-color: transparent;    /* Firefox: same as above */
+    display: flex;                /* Flexbox for vertical alignment */
+    align-items: center;
+    cursor: pointer;             /* Cursor changes to pointer on hover */
+    text-decoration: none;       /* Removes underline */
+    font-size: 2rem;             /* Enlarges logo text */
+}
+
+/* Font Awesome icon spacing (if used) */
+.fa-gem {
+    margin-right: 0.5rem;        /* Adds space between icon and logo text */
+}
+
+/* Styles the menu (ul) that holds the nav links */
+.navbar__menu {
+    display: flex;               /* Lays out menu items in a row */
+    align-items: center;        /* Vertically centers the items */
+    list-style: none;           /* Removes bullet points */
+    text-align: center;         /* Centers text (if applicable) */
+}
+
+/* Individual list item in the menu */
+.navbar__item {
+    height: 80px;               /* Matches navbar height for alignment */
+}
+
+/* Links inside each menu item */
+.navbar__links {
+    color: #fff;                /* White text */
+    display: flex;              /* Flexbox to center the link */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;      /* No underline */
+    padding: 0 1rem;            /* Horizontal padding between links */
+    height: 100%;               /* Fills the navbar height */
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline:none;
+    border-radius: 4px;
+    background: #f8de7e  ;
+    color: none;
+}
+
+.button:hover{
+    background: #9b8a4f;
+    transition: all 0.3 ease ;
+}
+
+/* 
+  Media Query:
+  This CSS block applies styles only when the screen width is 960px or less.
+  It's used for making your site responsive on tablets and smaller devices.
+*/
+@media screen and (max-width: 960px) {
+
+    /* 
+      Targeting the navbar container on small screens:
+      - Keeps flex layout
+      - Maintains spacing between items (logo and menu)
+      - Adjusts width and padding to fit smaller viewports
+    */
+    .navbar_container {
+        display: flex; /* Keeps the horizontal flex layout */
+        justify-content: space-between; /* Ensures logo and menu stay on opposite ends */
+        height: 80px; /* Keeps consistent height */
+        z-index: 1; /* Ensures it stays above other elements if overlapping */
+        width: 100%; /* Takes full width of the screen */
+        max-width: 1300px; /* Still respects the design max width */
+        padding: 0; /* Removes horizontal padding for tighter layout */
+    }
+
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin:0;
+        width: 100%;
+        position: absolute;
+       /* top: -1000px;
+        opacity: 1; */
+        transition: all 0.5 ease;
+        height: 50vh;
+        z-index: -1;
+                background: #131313;
+
+    }
+    .navbar__menu.active{
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition:all 0.5s ease ;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+    .button.bar{
+        width: 25px;
+        height: 5px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+
+    }
+    .navbar__item{
+        width: 100%;
+    }
+    .navbar__links{
+        text-align: center;
+        padding:2rem;
+        width:100%;
+        display: table;
+
+    }
+    #mobile-menu{
+        position:absolute;
+        top:20%;
+        right:5%;
+        transform: translate(5%,20%);
+
+    }
+    .navbar__bttn {
+    padding-bottom: 2rem;
+}
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin:0;
+    }
+    .navbar__toggle.bar{
+        display: block;
+        cursor: pointer;
+    }
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 2;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+       transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
