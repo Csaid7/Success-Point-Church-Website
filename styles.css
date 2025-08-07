@@ -9,7 +9,7 @@
 
 /* Navigation Bar Container */
 .navbar {   
-    background: #130c03;     /* Dark background color */
+    background: #ffffff;     /* Dark background color */
     height: 80px;            /* Fixed navbar height */
     display: flex;           /* Flexbox layout */
     justify-content: center; /* Centers content horizontally */
@@ -35,7 +35,7 @@
 /* Logo styling */
 #navbar__logo {
     background-color: #ff8177;   /* Fallback background color */
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); /* Gradient text effect */
+    background-image: linear-gradient(to top, #525051 0%, #dfdd75 100%); /* Gradient text effect */
     background-size: 100%;
     -webkit-background-clip: text;  /* Chrome/Safari: clip background to text */
     background-clip: text;          /* Standard: clip background to text */
@@ -69,7 +69,7 @@
 
 /* Links inside each menu item */
 .navbar__links {
-    color: #fff;                /* White text */
+    color: #000000;                /* White text */
     display: flex;              /* Flexbox to center the link */
     align-items: center;
     justify-content: center;
@@ -146,7 +146,7 @@
 
     }
     .navbar__menu.active{
-        background: #131313;
+        background: #969494;
         top: 100%;
         opacity: 1;
         transition:all 0.5s ease ;
@@ -162,7 +162,7 @@
         height: 3px;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
-        background: #fff;
+        background: #000000;
 
     }
     .navbar__item{
