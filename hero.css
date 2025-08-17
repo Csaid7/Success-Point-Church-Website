@@ -1,7 +1,12 @@
 .main{
     background: #000;
     background: linear-gradient(to right, #161616, #000000);
+    background-image: url(Images/logo.jpeg);
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Centers the image */
     padding:200px 0;
+    
 
 }
 .main_container{    
@@ -19,20 +24,17 @@
 .heading{   
   font-size: 75px ;  
   margin-bottom: 24px;
-  color: #fff;
+  color: #333;
 }
-.heading span{
-    
 
-}
 .heading2{
     font-size: 45px;
     /* margin: 24px; */
-    color:#fff  ;
+    color:#333  ;
 }
 .paragraph{
     font-size: 29px;
-    color: #fff;
+    color: #333;
 }
 @media screen and (max-width: 768px) {
   .heading {
